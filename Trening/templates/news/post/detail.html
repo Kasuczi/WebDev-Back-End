@@ -1,0 +1,39 @@
+{% extends "news/base.html" %}
+
+{% block title %}Post: {{ post.title }}{% endblock %}
+
+{% block content %}
+    <h1>{{ post.title }}</h1>
+    <h5>{{ post.published }}</h5>
+    <p>
+        {{ post.content|linebreaks }}
+    </p>
+    <article>
+    <p>
+        {% with comments.count as no_of_comments %}
+            <h3>{{ no_of_comments }} komentarzy</h3>
+        {% endwith %}
+    {% for comment in comments %}
+        <p>
+        {{ forloop.counter }}. Komentarz dodany przez
+        {{ comment.name }} w {{ comment.created }}<br>
+        {{ comment.content|linebreaks }}
+        </p>
+        {% empty %}
+        <p>brak komentarzy</p>
+    {% endfor %}
+    </p>
+    </article>
+    <h3>dodaj komentarz</h3>
+    <form action="." method="post">
+    <table>
+        {% for field in form %}
+        <tr><td>{{ field.label_tag }}</td>
+        <td>{{ field }}</td></tr>
+        {% endfor %}
+    </table>
+    {% csrf_token %}
+        <input type="submit" value="dodaj">
+    {{ form.errors }}
+    </form>
+{% endblock %}

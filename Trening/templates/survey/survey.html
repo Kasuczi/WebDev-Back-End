@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ankietka</title>
+</head>
+<body>
+<h1>ankietka</h1>
+{% if data %}
+<h2>dzieki za wyslanie info</h2>
+<p>{{ data }}</p>
+{% else %}
+<form method="post">
+    {{ form.as_p }}
+    {% csrf_token %}
+    <input type="submit" value="wyslij"
+</form>
+{% endif %}
+</body>
+</html>

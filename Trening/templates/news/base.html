@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        function welcome() {
+            alert('Welcome');
+        }
+    </script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <meta charset="UTF-8">
+    <title>
+        {% block title %}
+
+        {% endblock %}
+    </title>
+</head>
+<body>
+<div class="w3-panel w3-teal w3-center">
+    <h1 style="text-shadow:3px 3px 0 #444">DA PAGE</h1>
+</div>
+
+<div id="menu" class="w3-panel w3-yellow w3-center">
+    <ul style="margin-left: 0; padding-left: 0">
+        <li id="menu_button" class="w3-button w3-yellow">
+            <a href="/" style=" text-decoration: none">Home</a></li>
+        <li id="menu_button" class="w3-button w3-yellow">
+            <a href="/list" style=" text-decoration: none">Posty</a></li>
+        <li id="menu_button" class="w3-button w3-yellow">
+            <a href="/author" style=" text-decoration: none">Autor</a></li>
+    </ul>
+</div>
+<div id="content" class="w3-container w3-center w3-teal">
+{% if user.is_authenticated %}
+    Witam, {{ user.username }}
+{% endif %}
+    {% block content %}
+
+    {% endblock %}
+</div>
+<button id="welcome" class="w3-button w3-yellow" onclick="welcome()">YO</button>
+</body>
+</html>

@@ -1,0 +1,15 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Subject: Password reset on localhost:8000
+From: webmaster@localhost
+To: aandrysiak@gmail.com
+Date: Sun, 05 Apr 2020 09:19:05 -0000
+Message-ID: <158607834587.3878.1979348642676186704@aleksander-Aspire-A315-31>
+
+Resetowanie hasla dla aandrysiak@gmail.com
+
+kliknij w ponizszy link
+http://localhost:8000/accounts/reset/MQ/5fe-825a9ee5b1df62ec998b/
+Twoja nazwa uzytkowanika Olo
+-------------------------------------------------------------------------------

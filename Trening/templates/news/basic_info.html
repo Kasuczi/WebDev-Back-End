@@ -1,0 +1,22 @@
+{% extends "news/base.html" %}
+
+{% block title %}
+    Podstawowe informacje
+{%  endblock %}
+
+{% block content %}
+    <h1>Podstawowe info o Tobie</h1>
+    {% if data %}
+        <h2>Dzieki za wyslanie info</h2>
+        <p>{{ cd }}</p>
+    {% else %}
+        <form method="post">
+            {{form.as_p}}
+            {% csrf_token %}
+            <input type="submit" value="send">
+
+        </form>
+
+    {% endif %}
+
+{% endblock %}

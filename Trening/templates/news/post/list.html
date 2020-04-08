@@ -1,0 +1,17 @@
+{% extends "news/base.html" %}
+
+{% block title %} Lista postow {% endblock %}
+<!-- post/<int:year>/<int:month>/<int:day>/<str:slug> -->
+{% block content %}
+    <div id="posts">
+        {% for post in posts %}
+            <div id="post" class="w3-card w3-yellow w3-center">
+                <h3 align="center">{{ post.title }}</h3>
+                <p>{{ post.content }}</p>
+                <p>{{ post.published.year }}</p>
+                <a href="{{ post.get_absolute_url }}">Post Link</a>
+                </div>
+        {% endfor %}
+    </div>
+    {% include "news/pagination.html" with page=page_obj %}
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends 'news/base.html' %}
+{% block content %}
+    konto
+{% if user.is_autheticated %}
+    witaj {{ user.username }}
+    test
+    {% else %}
+    nope
+    {% endif %}
+{% endblock %}
